@@ -1,0 +1,60 @@
+﻿@page "/pages"
+@model IndexModel
+<h4 class="bg-primary text-white text-center p-2">People</h4>
+<table class="table table-sm table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Profession</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Person p in Model.People)
+        {
+            <tr class="@Model.GetClass(p.FirstName)">
+                <td>@p.PersonId</td>
+                <td>@p.FirstName, @p.FirstName</td>
+                <td>@p.LastName</td>
+                <td>@p.Profession </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form asp-page="Index" method="get">
+    <div class="form-group">
+        <label for="selectedCity">City</label>
+        <select name="selectedCity" class="form-control">
+            <option disabled selected>Select City</option>
+            @foreach (string city in Model.Cities)
+            {
+                <option selected="@(city == Model.SelectedCity)">
+                    @city
+                </option>
+            }
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Select</button>
+</form>
+
+@functions {
+    public class IndexModel : PageModel
+    {
+        private DataContext context;
+        public IndexModel(DataContext dbContext)
+        {
+            context = dbContext;
+        }
+        public IEnumerable<Person> People { get; set; }
+        public IEnumerable<string> Cities { get; set; }
+        [FromQuery]
+        public string SelectedCity { get; set; }
+        public void OnGet()
+        {
+            People = context.People;
+        }
+        public string GetClass(string city) =>
+        SelectedCity == city ? "bg-info text-white" : "";
+    }
+}
