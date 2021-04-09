@@ -13,6 +13,8 @@
         <input asp-for="Password" type="password" class="form-control" />
     </div>
     <button class="btn btn-primary" type="submit">Log In</button>
+    <br />
+    <a class="text-primary" asp-page="CreateUser">Create a New Account</a>
 </form>
 @functions {
     public class LoginModel : PageModel

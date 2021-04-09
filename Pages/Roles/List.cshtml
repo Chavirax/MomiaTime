@@ -4,7 +4,7 @@
 members. There is also a Create button, and each role is presented with Edit and Delete buttons, following the same pattern I used
 for the user management tools.-->
 <table class="table table-sm table-bordered">
-    <tr><th>ID</th><th>Name</th><th>Members</th><th></th></tr>
+    <tr><th>ID</th><th>Role Name</th><th>Members</th><th></th></tr>
     @if (Model.Roles.Count() == 0)
     {
         <tr><td colspan="4" class="text-center">No Roles</td></tr>
@@ -21,7 +21,7 @@ for the user management tools.-->
                     <form asp-page="List" method="post">
                         <input type="hidden" name="Id" value="@role.Id" />
                         <a class="btn btn-sm btn-warning" asp-page="Editor"
-                           asp-route-id="@role.Id" asp-route-mode="edit">Edit</a>
+                           asp-route-id="@role.Id" asp-route-mode="edit">Manage</a>
                         <button type="submit" class="btn btn-sm btn-danger">
                             Delete
                         </button>
@@ -31,7 +31,8 @@ for the user management tools.-->
         }
     }
 </table>
-<a class="btn btn-primary" asp-page="create">Create</a>
+<a class="btn btn-primary" asp-page="create">New Role</a>
+<a class="btn btn-primary" href="/Account/logout">Logout</a>
 @functions {
     public class ListModel : AdminPageModel
     {

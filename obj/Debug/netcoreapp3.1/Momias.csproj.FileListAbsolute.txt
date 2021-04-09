@@ -400,3 +400,4 @@ C:\Users\gdeca\source\repos\Momias\obj\Debug\netcoreapp3.1\Razor\Pages\Account\L
 C:\Users\gdeca\source\repos\Momias\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Logout.cshtml.g.cs
 C:\Users\gdeca\source\repos\Momias\obj\Debug\netcoreapp3.1\Razor\Pages\Account\_Layout.cshtml.g.cs
 C:\Users\gdeca\source\repos\Momias\obj\Debug\netcoreapp3.1\Razor\Pages\Account\AccessDenied.cshtml.g.cs
+C:\Users\gdeca\source\repos\Momias\obj\Debug\netcoreapp3.1\Razor\Pages\Account\CreateUser.cshtml.g.cs

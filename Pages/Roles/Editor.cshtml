@@ -10,13 +10,13 @@ role, and the AddToRoleAsync and RemoveFromRoleAsync methods are used to add and
 <form method="post">
     <input type="hidden" name="rolename" value="@Model.Role.Name" />
     <div asp-validation-summary="All" class="text-danger"></div>
-    <h5 class="bg-secondary text-white p-2">Members</h5>
+    <h5 class="bg-secondary text-white p-2">@Model.Role.Name</h5>
     <table class="table table-sm table-striped table-bordered">
         <thead><tr><th>User</th><th>Email</th><th></th></tr></thead>
         <tbody>
             @if ((await Model.Members()).Count() == 0)
             {
-                <tr><td colspan="3" class="text-center">No members</td></tr>
+                <tr><td colspan="3" class="text-center">No @Model.Role.Name/s</td></tr>
             }
             @foreach (IdentityUser user in await Model.Members())
             {
@@ -26,14 +26,14 @@ role, and the AddToRoleAsync and RemoveFromRoleAsync methods are used to add and
                     <td>
                         <button asp-route-userid="@user.Id"
                                 class="btn btn-primary btn-sm" type="submit">
-                            Change
+                            Remove
                         </button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <h5 class="bg-secondary text-white p-2">Non-Members</h5>
+    <h5 class="bg-secondary text-white p-2">Non-@Model.Role.Name</h5>
     <table class="table table-sm table-striped table-bordered">
         <thead><tr><th>User</th><th>Email</th><th></th></tr></thead>
         <tbody>
@@ -49,7 +49,7 @@ role, and the AddToRoleAsync and RemoveFromRoleAsync methods are used to add and
                     <td>
                         <button asp-route-userid="@user.Id"
                                 class="btn btn-primary btn-sm" type="submit">
-                            Change
+                            Add
                         </button>
                     </td>
                 </tr>
