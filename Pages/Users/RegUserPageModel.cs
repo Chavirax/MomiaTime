@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Momias.Pages
 {
-    [Authorize(Roles="Admins")]
-    public class AdminPageModel : PageModel
+    //[Authorize(Roles = "Admins")]
+    public class RegUserPageModel : PageModel
     {
     }
 }

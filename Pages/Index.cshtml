@@ -1,6 +1,6 @@
 ﻿@page "/pages"
 @model IndexModel
-<h4 class="bg-primary text-white text-center p-2">People</h4>
+<h4 class="bg-primary text-white text-center p-2">Data</h4>
 <table class="table table-sm table-bordered table-striped">
     <thead>
         <tr>
@@ -22,6 +22,7 @@
         }
     </tbody>
 </table>
+<button class="btn btn-primary" href="/Account/Logout">Logout</button>
 <form asp-page="Index" method="get">
     <div class="form-group">
         <label for="selectedCity">City</label>

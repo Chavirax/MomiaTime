@@ -20,7 +20,7 @@
     <a class="btn btn-secondary" asp-page="Login">Login</a>
 </form>
 @functions {
-    public class CreateModel : AdminPageModel
+    public class CreateModel : RegUserPageModel
     {
         public UserManager<IdentityUser> UserManager;
         public CreateModel(UserManager<IdentityUser> usrManager)
